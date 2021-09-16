@@ -1,1 +1,169 @@
-/* You can add global styles to this file, and also import other style files */
+$primary-color: #fab900;
+$dark-primary-color: darken($primary-color, 5%);
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+
+    // Small devices (landscape phones, 576px and up)
+    @media (max-width: 767px) { font-size: 12.5px; }
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) { font-size: 14px; } 
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) { font-size: 15px; } 
+    // X-Large devices (desktops, 1200px and up)
+    @media (min-width: 1200px) { font-size: 16px; } 
+    // XX-Large devices (larger desktops, 1400px and up)
+    @media (min-width: 1400px) { font-size: 16px; }
+}
+
+.container {
+    height: 80vh;
+
+    @media (max-width: 991px) {
+        height: 100vh;
+    }
+}
+
+.block {
+    padding: 0;
+}
+
+.register-container {
+    padding: 2.5rem 10rem;
+
+    @media (max-width: 991px) {
+        padding: 3rem;
+        .logo-component {
+            margin: 1.7rem 0;
+        }
+    }
+    @media (min-width: 992px) and (max-width: 1199px ) {
+        padding: 1rem;
+    }
+    @media (min-width: 1200px) and (max-width: 1399px ) {
+        padding: 5rem;
+    }
+
+    &__title {
+        padding: 1.5rem 0;
+        h1 {
+            font-size: 1.7rem;
+        }
+    }
+}
+
+.banner {
+    position: relative;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+
+    @media (max-width: 991px) {
+        display: none;
+    }
+
+    &__background-image {
+        height: 100%;
+        background-image: url('assets/img/side-banner.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 1;
+    }
+
+    &__background-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: transparent;
+        background-image: linear-gradient(360deg, #202125 75%, #8f8f9100 100%);
+        opacity: 0.8;
+        transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+    }
+
+    &__caption {
+        padding: 5rem 6.5rem 7.5rem;
+        position: absolute;
+        top: 10.5rem;
+        left: 0;
+        z-index: 3;
+        color: #ffffff;
+
+        
+        @media (min-width: 992px) and (max-width: 1199px ) {
+            padding: 1rem;
+            top: 17rem;
+        }
+
+        &--title {
+            margin: 1.5rem 0;
+            h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        &--content {
+            float: right;
+            width: 50%;
+            @media (min-width: 992px) and (max-width: 1199px ) {
+                float: left;
+            }
+            
+            p {
+                font-size: 1rem;
+                margin: 1rem 0;
+            }
+            span {
+                font-size: .7rem;
+                color: #aaa;
+            }
+        }
+    }
+}
+
+.btn-primary {
+    border-color: $primary-color;
+    background-color: $primary-color;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: $dark-primary-color;
+    border-color: $dark-primary-color;
+}
+.btn-check:focus+.btn-primary, .btn-primary:focus {
+    color: #fff;
+    background-color: $dark-primary-color;
+    border-color: $dark-primary-color;
+    box-shadow: 0 0 0 0.25rem rgb(220 163 0 / 25%);
+}
+.btn-check:active+.btn-primary, .btn-check:checked+.btn-primary, .btn-primary.active, .btn-primary:active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: $dark-primary-color;
+    border-color: $dark-primary-color;
+}
+.btn-check:active+.btn-primary:focus, .btn-check:checked+.btn-primary:focus, .btn-primary.active:focus, .btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.25rem rgb(220 163 0 / 25%);
+}
+
+// form-controls
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: rgb(220 163 0);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(220 163 0 / 25%);
+}
+
+.form-check-input:checked {
+    background-color: $dark-primary-color;
+    border-color: $dark-primary-color;
+}
+.form-check-input:focus {
+    border-color: $primary-color;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(220 163 0 / 25%);
+}
